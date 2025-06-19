@@ -1,0 +1,177 @@
+// 🚀 25 Beginner Dart Programs with Comments
+
+void main() {
+  // 1. Hello World
+  print("1. Hello, Dart!");
+
+  // 2. Variables and Data Types
+  String name = "Prem";
+  int age = 20;
+  double height = 5.8;
+  bool isStudent = true;
+  print("\n2. Name: $name, Age: $age, Height: $height, Student: $isStudent");
+
+  // 3. Basic Arithmetic
+  int a = 10, b = 5;
+  print("\n3. Sum: ${a + b}, Diff: ${a - b}, Mul: ${a * b}, Div: ${a / b}");
+
+  // 4. Conditional Statement
+  print("\n4. Conditional:");
+  if (age > 18) {
+    print("You are an adult.");
+  } else {
+    print("You are a minor.");
+  }
+
+  // 5. For Loop
+  print("\n5. For loop:");
+  for (int i = 1; i <= 5; i++) {
+    print(i);
+  }
+
+  // 6. While Loop
+  print("\n6. While loop:");
+  int count = 5;
+  while (count > 0) {
+    print(count);
+    count--;
+  }
+
+  // 7. Functions
+  print("\n7. Function result: ${greet("Prem")}");
+
+  // 8. List Basics
+  print("\n8. Lists:");
+  List<String> fruits = ["apple", "banana", "cherry"];
+  fruits.forEach((fruit) => print(fruit));
+
+  // 9. List Operations
+  List<int> nums = [1, 2, 3, 4, 5];
+  print("\n9. First number: ${nums.first}, Last: ${nums.last}, Length: ${nums.length}");
+
+  // 10. Map (Dictionary)
+  Map<String, dynamic> person = {"name": "Prem", "age": 20};
+  print("\n10. Map: ${person["name"]}, Age: ${person["age"]}");
+
+  // 11. Null Safety
+  print("\n11. Null Safety:");
+  String? nullableString;
+  print(nullableString ?? "Value is null");
+
+  // 12. String Interpolation
+  print("\n12. Hello $name, you're $age years old!");
+
+  // 13. Switch Case
+  print("\n13. Switch Case:");
+  String grade = "A";
+  switch (grade) {
+    case "A":
+      print("Excellent");
+      break;
+    case "B":
+      print("Good");
+      break;
+    default:
+      print("Keep trying");
+  }
+
+  // 14. Ternary Operator
+  print("\n14. Ternary: " + (age > 18 ? "Adult" : "Minor"));
+
+  // 15. Type Conversion
+  print("\n15. Type Conversion:");
+  String strNum = "42";
+  int parsed = int.parse(strNum);
+  print("Parsed: $parsed");
+
+  // 16. Const and Final
+  const double pi = 3.1416;
+  final String today = "Thursday";
+  print("\n16. Constants: pi = $pi, today = $today");
+
+  // 17. Exception Handling
+  print("\n17. Exception Handling:");
+  try {
+    int x = 5 ~/ 0;
+    print(x);
+  } catch (e) {
+    print("Error: $e");
+  }
+
+  // 18. Set
+  Set<int> uniqueNumbers = {1, 2, 3, 2};
+  print("\n18. Set: $uniqueNumbers");
+
+  // 19. Class and Object
+  print("\n19. Class & Object:");
+  Student s = Student("Prem", 20);
+  s.showInfo();
+
+  // 20. Enum Usage
+  print("\n20. Enum:");
+  Color fav = Color.blue;
+  print("Favorite color: $fav");
+
+  // 21. Arrow Function
+  print("\n21. Arrow Function:");
+  int square(int x) => x * x;
+  print("Square of 4: ${square(4)}");
+
+  // 22. List Filtering
+  print("\n22. List Filtering:");
+  List<int> even = nums.where((n) => n % 2 == 0).toList();
+  print("Even numbers: $even");
+
+  // 23. Loop with Break
+  print("\n23. Loop with Break:");
+  for (int i = 0; i < 10; i++) {
+    if (i == 5) break;
+    print(i);
+  }
+
+  // 24. Loop with Continue
+  print("\n24. Loop with Continue:");
+  for (int i = 0; i < 5; i++) {
+    if (i == 2) continue;
+    print(i);
+  }
+
+  // 25. Simple Calculator using Function
+  print("\n25. Simple Calculator Function: 5 + 3 = ${calculate(5, 3, '+')}");
+}
+
+// 7. Function Definition
+String greet(String user) {
+  return "Hello, $user!";
+}
+
+// 19. Class Example
+class Student {
+  String name;
+  int age;
+
+  Student(this.name, this.age);
+
+  void showInfo() {
+    print("Student: $name, Age: $age");
+  }
+}
+
+// 20. Enum Definition
+enum Color { red, green, blue }
+
+// 25. Calculator Function
+double calculate(double a, double b, String op) {
+  switch (op) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    case '/':
+      return b != 0 ? a / b : double.nan;
+    default:
+      return 0;
+  }
+}
